@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','BuildingController@show');
+Route::get('/building/','BuildingController@show');
+Route::get('/classroom/{building_id}','ClassroomController@show');
+Route::get('/review/{classroom_id}','ReviewController@show');

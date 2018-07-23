@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f5f5f5;
+}
+
+nav {
+    box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 0px 0px 2px 2px;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.buildinglist {
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+a.card-body {
+    display: inline-block;
+    height: 240px;
+    background: #1976D2;
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px 4px 4px 4px;
+    text-decoration-line: none;
+}
+
+.card-body:hover {
+    background: #fff;
+    box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-body:hover > .card-title {
+    color: #1976D2;
+}
+
+.card-title {
+    display: inline-block;
+    font-size: 32px;
+    color: #fff;
+}
