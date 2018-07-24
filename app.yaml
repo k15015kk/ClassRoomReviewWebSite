@@ -1,0 +1,28 @@
+runtime: php
+env: flex
+
+runtime_config:
+  document_root: public
+
+# Ensure we skip ".env", which is only for local development
+skip_files:
+  - .env
+
+env_variables:
+  # Put production environment variables here.
+  APP_LOG: errorlog
+  APP_KEY: base64:cMD8RyVFLYpx7bwvhf/tG0krXyFaVmGsYxGxXpTDm1c=
+  STORAGE_DIR: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_HOST: localhost
+  DB_DATABASE: classroomReview
+  DB_USERNAME: k15015kk
+  DB_PASSWORD: secret
+  DB_SOCKET: "/cloudsql/k15015kkdatabaseexercises:us-central1:classroomreview-database"
+
+beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: "k15015kkdatabaseexercises:us-central1:classroomreview-database"
