@@ -16,24 +16,56 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">教室レビュー</a>
+            <a class="navbar-brand" href="/">教室レビュー</a>
+
+            @guest
+
+            @else
+                <a class="navbar-text" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            @endguest
         </nav>
 
         <main class="buildinglist">
-            <div class="card-deck">
+            @if($data -> count() == 0)
+
+            <div class="reviewNothing">
+                <p class="nothingMessage">まだ登録はありません．</p>
+            </div>
+
+            @else
+
+            <div class="row card-area">
                 @foreach($data as $d)
 
-                <div class="card text-white xl-3">
-                    <a class="card-body" href="./classroom/{{$d -> building_id}}">
+                <div class="card text-white col-12">
+                    <a class="card-body" href="/classroom/{{$d -> building_id}}">
                         <span class="card-title">{{$d -> building_name}}</span>
                     </a>
                 </div>
 
                 @endforeach
+            </div>
+
+            @endif
+
+            @guest
+            
+            @else 
+                <div class="write-button-area">
+                    <a class="add-button" href="/building_add/show">
+                        <span class "add-mark">+</span>
+                    </a>
+                </div>
+            @endguest
         </main>
-
-        </div>
-
+    </div>
 </body>
 
 </html>

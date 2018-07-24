@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Classroom;
-use APP\Building;
+use App\Building;
 
 class ClassroomController extends Controller
 {
@@ -20,6 +20,22 @@ class ClassroomController extends Controller
         $model = new Classroom();
         $data = $model->getData($building_id);
 
-        return view('classroom',['data' => $data]);
+        $buildingModel = new Building();
+        $buildingAllData = $buildingModel -> getData();
+
+        if(intval($building_id) > $buildingAllData -> count()) {
+            return redirect()->action(
+                'BuildingController@show'
+            ); 
+        }
+        else 
+        {
+            $model = new Classroom();
+            $data = $model->getData($building_id);
+
+            return view('classroom',compact('data','building_id'));
+        }
+
+
     }
 }

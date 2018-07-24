@@ -23,4 +23,16 @@ class Building extends Model
 
         return $data;
     }
+
+    function getBuildingNameData($building_name) {
+        $data = DB::table($this->table) -> where('building_name',$building_name) -> get();
+
+        return $data;
+    }
+
+    function addBuilding($building_name) {
+        DB::table($this -> table) -> insert([
+            'building_name' => $building_name,
+        ]);
+    }
 }
