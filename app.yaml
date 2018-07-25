@@ -11,18 +11,21 @@ skip_files:
 env_variables:
   # Put production environment variables here.
   APP_LOG: errorlog
-  APP_KEY: base64:cMD8RyVFLYpx7bwvhf/tG0krXyFaVmGsYxGxXpTDm1c=
+  APP_KEY: base64:ZQvn9qXhFF3tXB1HZ2WDMF4qaO6uYGn7FFdks+v+DQ4=
+  APP_DEBUG: true
   STORAGE_DIR: /tmp
-  CACHE_DRIVER: database
+  CACHE_DRIVER: file
   SESSION_DRIVER: database
   ## Set these environment variables according to your CloudSQL configuration.
   DB_HOST: localhost
-  DB_DATABASE: classroomReview
-  DB_USERNAME: k15015kk
-  DB_PASSWORD: secret
+  DB_DATABASE: laravel
+  DB_USERNAME: root
+  DB_PASSWORD: root
   DB_SOCKET: "/cloudsql/k15015kkdatabaseexercises:us-central1:classroomreview-database"
 
+  QUEUE_DRIVER: database
+
 beta_settings:
-    # for Cloud SQL, set this value to the Cloud SQL connection name,
-    # e.g. "project:region:cloudsql-instance"
-    cloud_sql_instances: "k15015kkdatabaseexercises:us-central1:classroomreview-database"
+  # for Cloud SQL, set this value to the Cloud SQL connection name,
+  # e.g. "project:region:cloudsql-instance"
+  cloud_sql_instances: "k15015kkdatabaseexercises:us-central1:classroomreview-database"

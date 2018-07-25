@@ -49,6 +49,7 @@
             "@php artisan package:discover"
         ],
         "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "chmod -R 755 bootstrap\/cache",
             "php artisan cache:clear"
         ]

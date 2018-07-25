@@ -32,7 +32,7 @@ class ReviewController extends Controller
         else 
         {
             $buildingModel = new Building();
-            $building_data = $buildingModel -> getBuildingData($classroom_data -> classroom_id);
+            $building_data = $buildingModel -> getBuildingData($classroom_data -> building_id);
 
             return view('review',compact('data','classroom_data','building_data'));
         }
